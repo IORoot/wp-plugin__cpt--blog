@@ -19,6 +19,7 @@ class initialise
         $this->isotope_filters();
         $this->enqueue_css();
         $this->register_transform_filters();
+        $this->register_REST_metadata();
     }
 
     public function setup_cpt()
@@ -76,4 +77,8 @@ class initialise
         new filters\transforms\youtube_links_to_embeds;
     }
 
+    public function register_REST_metadata()
+    {
+        new REST\metadata;
+    }
 }
