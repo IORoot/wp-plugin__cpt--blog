@@ -17,15 +17,8 @@ $isotope_library = ANDYP_PAGEBUILDER_ISOTOPE_URL.'src/js/isotope.min.js';
 ?>
 
     <main class="bg-black block px-10 pb-10 text-white">
-
-        <?php 
-        //If the taxonomy has something placed into the block editor, use that instead of the default header.
-        if (!empty($content)){
-            echo $content;
-        } else {
-            include( __DIR__ . '/template-parts/taxonomy_hero.php');
-        }
-        ?>
+    
+        <?php  if (!empty($content)){  echo $content; }  ?>
 
         <ul class="grid-ul">
 
