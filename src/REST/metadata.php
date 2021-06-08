@@ -1,6 +1,6 @@
 <?php
 
-namespace andyp\labs\cpt\blog\REST;
+namespace andyp\cpt\blog\REST;
 
 /**
  * Return Metadata on post request to 

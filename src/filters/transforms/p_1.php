@@ -1,6 +1,6 @@
 <?php
 
-namespace andyp\labs\cpt\blog\filters\transforms;
+namespace andyp\cpt\blog\filters\transforms;
 
 /**
  * Filters Paragraph 1 to make it bigger

@@ -13,7 +13,7 @@ while ( have_posts() ) :
 	// -------------------------- TEMPLATE START ------------------------------
 	?>
 
-	<article class="bg-black text-halo">
+	<article class="">
 		
 	<?php include( __DIR__ . '/template-parts/title_description.php');  ?>  
 

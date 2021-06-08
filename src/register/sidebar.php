@@ -1,6 +1,6 @@
 <?php
 
-namespace andyp\labs\cpt\blog\register;
+namespace andyp\cpt\blog\register;
 
 class sidebar
 {

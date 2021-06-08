@@ -1,13 +1,11 @@
 <?php
 
-namespace andyp\labs\cpt\blog;
+namespace andyp\cpt\blog;
 
 class initialise
 {
 
-    public $singular = 'blog'; //lowercase
-    public $svgdata_icon = 'data:image/svg+xml;base64,PHN2ZyB2aWV3Qm94PSIwIDAgMjQgMjQiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHBhdGggZD0iTTE1LjU0LDMuNUwyMC41LDguNDdMMTkuMDcsOS44OEwxNC4xMiw0LjkzTDE1LjU0LDMuNU0zLjUsMTkuNzhMMTAsMTMuMzFDOS45LDEzIDkuOTcsMTIuNjEgMTAuMjMsMTIuMzVDMTAuNjIsMTEuOTYgMTEuMjYsMTEuOTYgMTEuNjUsMTIuMzVDMTIuMDQsMTIuNzUgMTIuMDQsMTMuMzggMTEuNjUsMTMuNzdDMTEuMzksMTQuMDMgMTEsMTQuMSAxMC42OSwxNEw0LjIyLDIwLjVMMTQuODMsMTYuOTVMMTguMzYsMTAuNTlMMTMuNDIsNS42NEw3LjA1LDkuMTdMMy41LDE5Ljc4WiIvPjwvc3ZnPg==';
-
+    private $config;
 
     public function run()
     {
@@ -16,17 +14,23 @@ class initialise
         $this->switch_on_metaboxes();
         $this->register_template_folder();
         $this->register_sidebar();
-        $this->isotope_filters();
         $this->enqueue_css();
         $this->register_transform_filters();
         $this->register_REST_metadata();
     }
 
+    public function set_config($config)
+    {
+        $this->config = $config;
+    }
+
     public function setup_cpt()
     {
         $this->cpt = new cpt\create_cpt;
-        $this->cpt->set_singular(ucfirst($this->singular));
-        $this->cpt->set_icon($this->svgdata_icon);
+        $this->cpt->set_singular(ucfirst($this->config['post_type']));
+        $this->cpt->set_icon($this->config['svgdata_icon']);
+        $this->cpt->set_category($this->config['category']);
+        $this->cpt->set_tags($this->config['tags']);
     }
     
     public function register_cpt()
@@ -50,31 +54,24 @@ class initialise
 
     public function register_template_folder()
     {
-        new filters\register_template_folder($this->singular);
+        new filters\register_template_folder($this->config['post_type']);
     }
 
     public function register_sidebar()
     {
-        new register\sidebar(ucfirst($this->singular));
-    }
-
-    public function isotope_filters()
-    {
-        new filters\isotope_filters;
+        new register\sidebar(ucfirst($this->config['post_type']));
     }
 
     public function enqueue_css()
     {
-        new filters\enqueue_css_in_footer($this->singular);
+        new filters\enqueue_css_in_footer($this->config['post_type']);
     }
 
     public function register_transform_filters()
     {
         new filters\transforms\parsedown;
         new filters\transforms\tailwind;
-        new filters\transforms\p_1;
         new filters\transforms\tag_hide;
-        new filters\transforms\youtube_links_to_embeds;
     }
 
     public function register_REST_metadata()

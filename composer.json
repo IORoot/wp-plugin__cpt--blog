@@ -1,7 +1,7 @@
 {
     "autoload": {
         "psr-4": {
-            "andyp\\labs\\cpt\\blog\\": "src/"
+            "andyp\\cpt\\blog\\": "src/"
         }
     },
     "require": {

@@ -1,6 +1,6 @@
 <?php
 
-namespace andyp\labs\cpt\blog\filters;
+namespace andyp\cpt\blog\filters;
 
 
 class register_template_folder
@@ -22,20 +22,21 @@ class register_template_folder
 
     public function taxonomy_template($template) {
 
+        global $wp_query;
         global $post;
-        $post_type = $post->post_type;
 
-        if ($post_type != $this->post_type){ return $template; }
+        // check we are registering for 'blog' only.
+        if ( $post->post_type !=  $this->post_type){ return $template; }
 
         if (is_archive())
         {
-            $new_template = ANDYP_LABS_CPT_BLOG_PATH . '/src/views/archive-template.php';
+            $new_template = ANDYP_CPT_BLOG_PATH . '/src/views/archive-template.php';
             if (file_exists($new_template)) { $template = $new_template; }
         }
 
         if (is_tax())
         {
-            $new_template = ANDYP_LABS_CPT_BLOG_PATH . '/src/views/taxonomy-template.php';
+            $new_template = ANDYP_CPT_BLOG_PATH . '/src/views/taxonomy-template.php';
             if (file_exists($new_template)) { $template = $new_template; }
         }
 
@@ -56,7 +57,7 @@ class register_template_folder
 
         global $post;
 
-        $folder = ANDYP_LABS_CPT_BLOG_PATH . '/src/views/';
+        $folder = ANDYP_CPT_BLOG_PATH . '/src/views/';
     
         if ( $post->post_type != $this->post_type ) {
             return $template;

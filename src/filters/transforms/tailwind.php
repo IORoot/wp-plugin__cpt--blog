@@ -1,6 +1,6 @@
 <?php
 
-namespace andyp\labs\cpt\blog\filters\transforms;
+namespace andyp\cpt\blog\filters\transforms;
 
 /**
  * After content has been filtered for markdown, add custom tailwind classes
