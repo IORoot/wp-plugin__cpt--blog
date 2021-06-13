@@ -14,7 +14,11 @@ class parsedown {
     public function callback($text)
     {
         $Parsedown = new \ParsedownToc();
-        return $Parsedown->setBreaksEnabled(true)->text($text);
+        // $html_with_toc    = $Parsedown->setBreaksEnabled(true)->text($text);
+        $html_without_toc = $Parsedown->setBreaksEnabled(true)->body($text);
+        // $just_toc         = $Parsedown->setBreaksEnabled(true)->toc($text);
+
+        return $html_without_toc;
     }
 
 }

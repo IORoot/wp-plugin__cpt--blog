@@ -12,6 +12,7 @@ class tailwind {
 
     public function __construct()
     {
+        // apply to content
         add_filter('cpt_blog_transforms', [$this, 'callback'], 20, 1 );
     }
 
@@ -52,37 +53,34 @@ class tailwind {
 
     public function h2()
     {
-        return 'text-6xl pt-24 border-t-4 border-goo mt-24 mb-12';
+        return 'text-6xl my-20';
     }
 
     public function h3()
     {
-        return 'text-5xl mt-24 mb-12';
+        return 'text-5xl my-20';
     }
 
     public function h4()
     {
-        return 'text-4xl mt-24 mb-12 font-thin';
-    }
-
-    public function hr()
-    {
-        return 'border-goo my-24 border-4 w-full';
+        return 'text-4xl my-20 font-thin';
     }
 
     public function p()
     {
-        return 'text-2xl lg:w-4/5 mb-4 leading-relaxed';
+        return 'text-2xl mb-4 leading-relaxed';
     }
+
+
 
     public function ul()
     {
-        return 'text-xl list-outside list-disc bg-night mb-12 px-12 pt-12 pb-8 w-full';
+        return 'text-xl list-outside list-disc mb-12 px-12 pt-12 pb-8 w-full';
     }
 
     public function ol()
     {
-        return 'text-xl list-outside list-decimal bg-night mb-12 px-12 pt-12 pb-8 w-full';
+        return 'text-xl list-outside list-decimal mb-12 px-12 pt-12 pb-8 w-full';
     }
 
     public function li()
@@ -90,14 +88,22 @@ class tailwind {
         return 'pb-4 leading-relaxed';
     }
 
+
+
     public function blockquote()
     {
-        return 'bg-night text-mist p-12 my-12 w-full';
+        return 'bg-gray-100 p-12 my-12 w-full';
     }
 
 
     public function a()
     {
-        return 'underline hover:bg-goo hover:text-black';
+        return 'underline hover:bg-yellow-500 hover:bg-yellow-800 hover:text-white';
+    }
+
+
+    public function hr()
+    {
+        return 'border-yellow-800 my-24 border-4 w-full';
     }
 }

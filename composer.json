@@ -6,6 +6,6 @@
     },
     "require": {
         "erusev/parsedown": "^1.7",
-        "keinos/parsedown-toc": "^1.1"
+        "keinos/parsedown-toc": "^1.1.2"
     }
 }

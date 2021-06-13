@@ -70,8 +70,10 @@ class initialise
     public function register_transform_filters()
     {
         new filters\transforms\parsedown;
+        new filters\transforms\parsedown_toc;
         new filters\transforms\tailwind;
         new filters\transforms\tag_hide;
+        new filters\transforms\youtube_links_to_embeds;
     }
 
     public function register_REST_metadata()

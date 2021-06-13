@@ -2,34 +2,35 @@
 
 get_header();
 
-$term = get_queried_object();
 
-$page_classes = get_field('page_classes', $term);
+$current_term = get_queried_object();
+$current_term->acf = get_fields( $current_term );
 
-$pb = new andyp\pagebuilder\filters\the_content;
-$content = $pb->filter_the_content_in_the_main_loop(null, $term);
-
-$background_url = do_shortcode('[random_image_url ids="' . rand(2498,2457) . '"]'); 
-
-$isotope_library = ANDYP_PAGEBUILDER_ISOTOPE_URL.'src/js/isotope.min.js';
+/**
+ * Convert all ACF meta fields to key => value pairs for the taxonomy.
+ */
+foreach ($current_term->acf['meta_fields'] as $meta_field)
+{
+    $name  = $meta_field['meta_field_name'];
+    $value = $meta_field['meta_field_value'];
+    $current_term->acf['meta_fields'][$name] = $value;
+}
 
 // -------------------------- TEMPLATE START ------------------------------
 ?>
 
-    <main class="bg-black block px-10 pb-10 text-white">
-    
-        <?php  if (!empty($content)){  echo $content; }  ?>
+    <main class="lg:max-w-screen-xl mx-4 lg:m-auto block pb-40 relative">
 
-        <ul class="grid-ul">
+        <?php  include( __DIR__ . '/category-parts/category_hero.php'); ?>
 
-            <?php while (have_posts()) {
-                the_post();
+        <ul class="grid grid-cols-4 gap-4">
 
-                include( __DIR__ . '/template-parts/taxonomy_item.php');
+            <?php 
+                while (have_posts()) {
+                    the_post();
+                    include( __DIR__ . '/category-parts/category_item.php');
+                } 
             ?>
-
-            <?php } ?>
-
         </ul>
 
     </main>
@@ -40,15 +41,4 @@ $isotope_library = ANDYP_PAGEBUILDER_ISOTOPE_URL.'src/js/isotope.min.js';
 
 get_footer();
 
-/**
- * Add Isotope at bottom.
- */
 ?>
-<script src="<?php echo $isotope_library; ?>"></script>
-<script>
-var elem = document.querySelector('.grid-ul');
-var iso = new Isotope( elem, {
-    itemSelector: '.grid-item',
-    layoutMode: 'fitRows'
-});
-</script>

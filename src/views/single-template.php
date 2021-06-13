@@ -7,34 +7,104 @@ while ( have_posts() ) :
 
 	the_post();
 
-	// Used in multiple places. - word count & printing out below.
-	$content = apply_filters('cpt_blog_transforms', $post->post_content);
 
 	// -------------------------- TEMPLATE START ------------------------------
 	?>
 
-	<article class="">
-		
-	<?php include( __DIR__ . '/template-parts/title_description.php');  ?>  
+	<?php
+	// ┌─────────────────────────────────────────────────────────────────────────┐
+	// │                                                                         │
+	// │                                VIDEO                                    │
+	// │                                                                         │
+	// └─────────────────────────────────────────────────────────────────────────┘
+	?>
+	<?php include( __DIR__ . '/single-parts/youtube_lite.php');  ?> 	
 
-		<?php include( __DIR__ . '/template-parts/youtube_lite.php');  ?>  
+	<article class="lg:max-w-screen-xl mx-4 lg:m-auto block pb-40 relative">
+		<?php
+		// ┌─────────────────────────────────────────────────────────────────────────┐
+		// │                                                                         │
+		// │                                BREADCRUMBS                              │
+		// │                                                                         │
+		// └─────────────────────────────────────────────────────────────────────────┘
+		?>
+		<?php include( __DIR__ . '/single-parts/breadcrumbs.php');  ?> 
 
-		<div class="flex py-3"> 
 
-			<div class="md:w-1/5 w-24"></div>
 
-			<div class="md:w-3/5 overflow-hidden">
 
-				<?php include( __DIR__ . '/template-parts/back_to_top.php');  ?>  
 
-				<?php echo $content;  ?>   
-
+		<div class="flex w-full gap-10 lg:gap-20 mb-20">
+			<div class="w-2/3">
+				<?php
+				// ┌─────────────────────────────────────────────────────────────────────────┐
+				// │                                                                         │
+				// │                                TITLE                                    │
+				// │                                                                         │
+				// └─────────────────────────────────────────────────────────────────────────┘
+				?>
+				<?php include( __DIR__ . '/single-parts/title.php');  ?> 
+				
 			</div>
 
-			<div class="md:w-1/5 w-24"></div>
+			<div class="w-1/3">
+				<?php
+				// ┌─────────────────────────────────────────────────────────────────────────┐
+				// │                                                                         │
+				// │                                METADATA                                 │
+				// │                                                                         │
+				// └─────────────────────────────────────────────────────────────────────────┘
+				?>
+				<?php include( __DIR__ . '/single-parts/metadata.php');  ?>  
+			</div>		
+		</div>
+		
 
+
+		<div class="flex gap-10 lg:gap-20 items-start mb-40">
+
+			<?php
+			// ┌─────────────────────────────────────────────────────────────────────────┐
+			// │                                                                         │
+			// │                                THE CONTENT                              │
+			// │                                                                         │
+			// └─────────────────────────────────────────────────────────────────────────┘
+			?>
+			<?php include( __DIR__ . '/single-parts/content.php');  ?>  
+
+			<?php
+			// ┌─────────────────────────────────────────────────────────────────────────┐
+			// │                                                                         │
+			// │                            TABLE OF CONTENTS                            │
+			// │                                                                         │
+			// └─────────────────────────────────────────────────────────────────────────┘
+			?>
+			<?php include( __DIR__ . '/single-parts/toc.php');  ?>  
 		</div>
 
+
+
+		<?php
+		// ┌─────────────────────────────────────────────────────────────────────────┐
+		// │                                                                         │
+		// │                              RELATED ARTICLES                           │
+		// │                                                                         │
+		// └─────────────────────────────────────────────────────────────────────────┘
+		?>
+		<div class="flex mb-4 gap-4">
+			<?php include( __DIR__ . '/generic-parts/related.php');  ?>  
+		</div>
+
+		<?php
+		// ┌─────────────────────────────────────────────────────────────────────────┐
+		// │                                                                         │
+		// │                        =TUTORIALS / DEMO / BLOG                         │
+		// │                                                                         │
+		// └─────────────────────────────────────────────────────────────────────────┘
+		?>
+		<div class="flex">
+			<?php include( __DIR__ . '/generic-parts/tutorials_demos_blog.php');  ?>  
+		</div>
 	</article>
 
 
