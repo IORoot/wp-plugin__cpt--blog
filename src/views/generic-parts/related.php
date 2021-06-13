@@ -14,7 +14,7 @@
         /**
          * Get the term permalink
          */
-        $loop_post->url = get_term_link($loop_post);
+        $loop_post->url = get_permalink($loop_post);
         $loop_post->image = get_the_post_thumbnail_url($loop_post);
 
 
