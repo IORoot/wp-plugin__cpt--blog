@@ -23,7 +23,7 @@
         $f = new \NumberFormatter("en", NumberFormatter::SPELLOUT);
         $spelled = $f->format($count);
     ?>
-	<div class="text-3xl font-thin mt-4">There is <?php echo $spelled; ?> blog post<?php if($count > 1){ echo 's';} ?> in the <?php echo $current_term->name; ?> category </p></div>
+	<div class="text-3xl font-thin mt-4 text-center">There is <?php echo $spelled; ?> blog post<?php if($count > 1){ echo 's';} ?> in the <?php echo $current_term->name; ?> category </p></div>
 
     <?php
     // ┌─────────────────────────────────────────────────────────────────────────┐
@@ -32,7 +32,7 @@
     // │                                                                         │
     // └─────────────────────────────────────────────────────────────────────────┘
     ?>
-    <div class="h-9 mt-10">
+    <div class="h-9 mt-10 w-full">
         <?php do_shortcode('[breadcrumb colour="yellow-500"]'); ?>
     </div>
 

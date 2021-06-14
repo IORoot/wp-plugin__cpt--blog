@@ -19,11 +19,11 @@ foreach ($current_term->acf['meta_fields'] as $meta_field)
 // -------------------------- TEMPLATE START ------------------------------
 ?>
 
-    <main class="lg:max-w-screen-xl mx-4 lg:m-auto block pb-40 relative">
+    <main class="max-w-screen-xl mx-4 xl:m-auto block pb-40 relative">
 
         <?php  include( __DIR__ . '/category-parts/category_hero.php'); ?>
 
-        <ul class="grid grid-cols-4 gap-4">
+        <ul class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
 
             <?php 
                 while (have_posts()) {
