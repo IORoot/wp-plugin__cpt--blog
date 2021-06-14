@@ -13,7 +13,7 @@
     if (empty($videoId)){
 
         echo '<div class="aspect-w-16 aspect-h-5 mb-12 ">';
-            the_post_thumbnail(null, ['class' => ' object-contain bg-gray-50']);
+            the_post_thumbnail(null, ['class' => ' object-cover bg-gray-50']);
         echo '</div>';
 
     } else {
