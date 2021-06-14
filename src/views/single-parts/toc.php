@@ -3,7 +3,7 @@
 ?>
 
 
-<div class="w-1/3 sticky top-10 font-thin text-sm" style="height: calc(100vh - 5rem);">
+<div class="w-full lg:w-1/3 sticky top-10 font-thin text-sm hidden lg:block" style="height: calc(100vh - 5rem);">
 
     <div class="font-semi-bold text-lg w-full border-b-2 p-2 absolute top-0 h-10">Article Content</div>
 

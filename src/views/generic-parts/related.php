@@ -21,7 +21,7 @@
         /**
          * Template of Related Series.
          */
-        $html[] = '<a href="'.$loop_post->url.'" class="flex flex-col relative w-1/2 p-4 bg-yellow-500 text-white fill-white rounded-2xl overflow-hidden hover:fill-yellow-500 hover:text-black hover:bg-gray-200" >';
+        $html[] = '<a href="'.$loop_post->url.'" class="flex flex-col relative w-full md:w-1/2 p-4 bg-yellow-500 text-white fill-white rounded-2xl overflow-hidden hover:fill-yellow-500 hover:text-black hover:bg-gray-200" >';
         
             // ┌─────────────────────────────────────────────────────────────────────────┐
             // │                                                                         │

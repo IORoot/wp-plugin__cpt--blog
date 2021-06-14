@@ -20,7 +20,7 @@ while ( have_posts() ) :
 	?>
 	<?php include( __DIR__ . '/single-parts/youtube_lite.php');  ?> 	
 
-	<article class="lg:max-w-screen-xl mx-4 lg:m-auto block pb-40 relative">
+	<article class="max-w-screen-xl mx-4 xl:m-auto block pb-40 relative">
 		<?php
 		// ┌─────────────────────────────────────────────────────────────────────────┐
 		// │                                                                         │
@@ -34,8 +34,8 @@ while ( have_posts() ) :
 
 
 
-		<div class="flex w-full gap-10 lg:gap-20 mb-20">
-			<div class="w-2/3">
+		<div class="flex flex-col-reverse lg:flex-row w-full gap-10 lg:gap-20 mb-20  pt-10 lg:pt-0">
+			<div class="w-full lg:w-2/3">
 				<?php
 				// ┌─────────────────────────────────────────────────────────────────────────┐
 				// │                                                                         │
@@ -47,7 +47,7 @@ while ( have_posts() ) :
 				
 			</div>
 
-			<div class="w-1/3">
+			<div class="w-full lg:w-1/3">
 				<?php
 				// ┌─────────────────────────────────────────────────────────────────────────┐
 				// │                                                                         │
@@ -91,7 +91,7 @@ while ( have_posts() ) :
 		// │                                                                         │
 		// └─────────────────────────────────────────────────────────────────────────┘
 		?>
-		<div class="flex mb-4 gap-4">
+		<div class="flex flex-col md:flex-row mb-4 gap-4">
 			<?php include( __DIR__ . '/generic-parts/related.php');  ?>  
 		</div>
 
@@ -102,9 +102,8 @@ while ( have_posts() ) :
 		// │                                                                         │
 		// └─────────────────────────────────────────────────────────────────────────┘
 		?>
-		<div class="flex">
-			<?php include( __DIR__ . '/generic-parts/tutorials_demos_blog.php');  ?>  
-		</div>
+		<?php include( __DIR__ . '/generic-parts/tutorials_demos_blog.php');  ?>  
+
 	</article>
 
 
