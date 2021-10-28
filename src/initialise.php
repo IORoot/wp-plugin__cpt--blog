@@ -17,6 +17,7 @@ class initialise
         $this->enqueue_css();
         $this->register_transform_filters();
         $this->register_REST_metadata();
+        $this->disable_visual_editor();
     }
 
     public function set_config($config)
@@ -79,5 +80,10 @@ class initialise
     public function register_REST_metadata()
     {
         new REST\metadata;
+    }
+
+    public function disable_visual_editor()
+    {
+        new filters\disable_visual_editor($this->config['post_type']);
     }
 }

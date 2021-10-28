@@ -60,4 +60,3 @@ new andyp\cpt\blog\setup\activate;
 $cpt = new andyp\cpt\blog\initialise;
 $cpt->set_config($config);
 $cpt->run();
-
