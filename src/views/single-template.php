@@ -24,11 +24,11 @@ while ( have_posts() ) :
 		<?php
 		// ┌─────────────────────────────────────────────────────────────────────────┐
 		// │                                                                         │
-		// │                                BREADCRUMBS                              │
+		// │                                BACK BUTTON                              │
 		// │                                                                         │
 		// └─────────────────────────────────────────────────────────────────────────┘
 		?>
-		<?php include( __DIR__ . '/single-parts/breadcrumbs.php');  ?> 
+		<?php include( __DIR__ . '/single-parts/back_button.php');  ?> 
 
 
 
@@ -82,27 +82,6 @@ while ( have_posts() ) :
 			<?php include( __DIR__ . '/single-parts/toc.php');  ?>  
 		</div>
 
-
-
-		<?php
-		// ┌─────────────────────────────────────────────────────────────────────────┐
-		// │                                                                         │
-		// │                              RELATED ARTICLES                           │
-		// │                                                                         │
-		// └─────────────────────────────────────────────────────────────────────────┘
-		?>
-		<div class="flex flex-col md:flex-row mb-4 gap-4">
-			<?php include( __DIR__ . '/generic-parts/related.php');  ?>  
-		</div>
-
-		<?php
-		// ┌─────────────────────────────────────────────────────────────────────────┐
-		// │                                                                         │
-		// │                        =TUTORIALS / DEMO / BLOG                         │
-		// │                                                                         │
-		// └─────────────────────────────────────────────────────────────────────────┘
-		?>
-		<?php include( __DIR__ . '/generic-parts/tutorials_demos_blog.php');  ?>  
 
 	</article>
 

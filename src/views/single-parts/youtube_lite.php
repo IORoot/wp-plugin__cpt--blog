@@ -12,13 +12,13 @@
 
     if (empty($videoId)){
 
-        echo '<div class="aspect-w-16 aspect-h-5 mb-12 ">';
-            the_post_thumbnail(null, ['class' => ' object-cover bg-gray-50']);
+        echo '<div class="h-128 mb-12 overflow-hidden">';
+            the_post_thumbnail(null, ['class' => ' object-cover bg-TrueGrey400']);
         echo '</div>';
 
     } else {
         echo '<lite-youtube 
-                    class="w-full aspect-w-16 aspect-h-5 mb-12 block bg-cover bg-center bg-no-repeat bg-night fill-yellow-500 hover:fill-white cursor-pointer" 
+                    class="w-full h-128 mb-20 block bg-cover bg-center bg-no-repeat bg-night fill-Amber500 hover:fill-white cursor-pointer" 
                     id="ytplayer" 
                     videoid="'. $videoId .'" 
                     ' . $thumbnail . '>' . PHP_EOL;

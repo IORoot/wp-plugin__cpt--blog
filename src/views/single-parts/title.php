@@ -1,1 +1,1 @@
-<h1 class="text-4xl md:text-5xl lg:text-8xl capitalize text-gray-800"><?php the_title(); ?></h1>
+<h1 class="text-4xl md:text-5xl lg:text-8xl capitalize text-CoolGrey800"><?php the_title(); ?></h1>

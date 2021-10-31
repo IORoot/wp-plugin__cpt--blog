@@ -23,6 +23,8 @@ foreach ($current_term->acf['meta_fields'] as $meta_field)
 
         <?php  include( __DIR__ . '/category-parts/category_hero.php'); ?>
 
+        <?php include( __DIR__ . '/single-parts/back_button.php');  ?> 
+
         <ul class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
 
             <?php 

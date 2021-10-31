@@ -51,7 +51,7 @@ class parsedown_toc {
 
     public function style_toc()
     {
-        $this->toc = str_replace('<li>', '<li class="pl-10 hover:bg-gray-100 leading-7 ">', $this->toc);
+        $this->toc = str_replace('<li>', '<li class="pl-10 hover:bg-CoolGrey100 leading-7 ">', $this->toc);
         $this->toc = str_replace('<a', '<a class="hover:underline"', $this->toc);
     }
 

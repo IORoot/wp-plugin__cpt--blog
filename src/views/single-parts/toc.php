@@ -19,7 +19,7 @@
     </div>  
 
     <div class="font-semi-bold text-lg w-full p-2 absolute bottom-0 h-10 border-t-2 flex">
-        <div class="flex-1 text-yellow-500 text-sm font-light">Time to read: <?php echo $reading_time; ?></div>
+        <div class="flex-1 text-Amber500 text-sm font-light">Time to read: <?php echo $reading_time; ?></div>
         <?php include( __DIR__ . '/back_to_top.php');  ?>  
     </div>
 
