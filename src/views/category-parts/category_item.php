@@ -1,6 +1,6 @@
 <div class="" >
                 
-    <a class="flex flex-col relative rounded-2xl overflow-hidden bg-yellow-500 hover:bg-gray-200 text-white hover:text-black" href="<?php echo get_permalink($post);?>">
+    <a class="flex flex-col relative rounded-2xl overflow-hidden bg-Amber500 hover:bg-TrueGrey400 text-white hover:text-black" href="<?php echo get_permalink($post);?>">
         
 
         <?php
@@ -10,7 +10,7 @@
         // │                                                                         │
         // └─────────────────────────────────────────────────────────────────────────┘
         ?>
-        <div class="text-white text-xs font-semibold bg-yellow-500 absolute top-4 right-4 px-2 py-0.5 rounded">BLOG</div>
+        <div class="text-white text-xs font-semibold bg-Amber500 absolute top-4 right-4 px-2 py-0.5 rounded">BLOG</div>
         
         <?php
         // ┌─────────────────────────────────────────────────────────────────────────┐
@@ -57,7 +57,7 @@
             <?php 
                 foreach(get_the_terms($post, 'blog_tags') as $tag){
                     ?>
-                    <div class="text-white text-xs bg-yellow-800 self-start px-2 py-0.5 mr-0.5 mb-1 inline-block rounded">
+                    <div class="text-white text-xs bg-CoolGrey800 self-start px-2 py-0.5 mr-0.5 mb-1 inline-block rounded">
                         <?php echo strtoupper($tag->name); ?>
                     </div>
                     <?php

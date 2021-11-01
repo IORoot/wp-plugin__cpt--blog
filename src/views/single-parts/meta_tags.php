@@ -4,7 +4,7 @@
 
     if (!empty($tags)) {
         foreach ($tags as $tag) {
-            echo '<a class="mr-2 hover:text-yellow-500" href="'.get_term_link($tag).'" title="'.$tag->name.'">';
+            echo '<a class="mr-2 hover:text-Amber500" href="'.get_term_link($tag).'" title="'.$tag->name.'">';
             echo $tag->name;
             echo '</a>';
         }

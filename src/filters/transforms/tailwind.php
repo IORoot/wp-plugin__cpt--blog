@@ -92,13 +92,13 @@ class tailwind {
 
     public function blockquote()
     {
-        return 'bg-gray-100 p-12 my-12 w-full';
+        return 'bg-CoolGrey100 p-12 my-12 w-full';
     }
 
 
     public function a()
     {
-        return 'underline hover:bg-yellow-500 hover:bg-yellow-800 hover:text-white';
+        return 'underline hover:bg-Amber500 hover:bg-yellow-800 hover:text-white';
     }
 
 
